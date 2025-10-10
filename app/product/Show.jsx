@@ -148,7 +148,7 @@ const Show = ({ product, products }) => {
                 className=" text-center hover:scale-105 transition shadow-md cursor-pointer
                  bg-primary text-xl px-8 py-2  text-highLight ring-1 ring-primary"
               >
-                Buy Now
+                Buy now
               </div>
             </div>
           </section>

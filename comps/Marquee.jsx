@@ -11,10 +11,17 @@ const Marquee = ({ products }) => {
       </h1>
 
       <section className=" mt-10 relative h-52 sm:h-96  w-full  overflow-hidden">
-        <div className={`flex  justify-center`}>
-          {products.map((product) => (
-            <Products gap={"mr-5"} key={product._id} products={product} />
-          ))}
+        <div className={`${styles.anim} flex`}>
+          <div className="flex justify-center">
+            {products.map((product) => (
+              <Products gap={"mr-5"} key={product._id} products={product} />
+            ))}
+          </div>
+          <div className="flex justify-center" aria-hidden="true">
+            {products.map((product) => (
+              <Products gap={"mr-5"} key={`dup-${product._id}`} products={product} />
+            ))}
+          </div>
         </div>
       </section>
     </div>
