@@ -43,11 +43,15 @@ const Home = ({ products, bannerData }: HomeProps) => {
         </label>
         <select
           id="sortSelect"
+          aria-label="Sort products by price"
+          title="Sort products by price"
           value={sort}
           onChange={(e) => setSort(e.target.value as "low" | "high" | "")}
           className="mb-2 mt-1 border border-lightGray rounded px-2 py-1 text-sm focus:outline-none"
         >
-          <option value="">—</option>
+          <option value="" disabled hidden>
+            Select price order
+          </option>
           <option value="low">low to high</option>
           <option value="high">high to low</option>
         </select>
