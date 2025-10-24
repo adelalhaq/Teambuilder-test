@@ -45,6 +45,12 @@ const Products = ({ products, gap }: ProductsProps) => {
     }
   };
 
+  const JPY_PER_MYR = 35.0;
+  const formatJPY = (val: number) =>
+    new Intl.NumberFormat("ja-JP", {
+      style: "currency",
+      currency: "JPY",
+    }).format(Math.round(val * JPY_PER_MYR));
   return (
     <div
       className={` ${gap} grid justify-center hover:scale-105
@@ -68,10 +74,10 @@ const Products = ({ products, gap }: ProductsProps) => {
           <p> {products.name} </p>
           <div className=" flex gap-3">
             <span className=" text-sm text-lightGray line-through ">
-              {new Intl.NumberFormat("ja-JP", { style: "currency", currency: "JPY" }).format(products.oldPrice)}
+              {formatJPY(products.oldPrice)}
             </span>
             <b className=" text-zinc-900 ">
-              {new Intl.NumberFormat("ja-JP", { style: "currency", currency: "JPY" }).format(products.price)}
+              {formatJPY(products.price)}
             </b>
           </div>
         </nav>
