@@ -76,13 +76,10 @@ const Products = ({ products, gap }: ProductsProps) => {
             <span className=" text-sm text-lightGray line-through ">
               {formatJPY(products.oldPrice)}
             </span>
-            <b className=" text-zinc-900 ">
-              {formatJPY(products.price)}
-            </b>
+            <b className=" text-zinc-900 ">{formatJPY(products.price)}</b>
           </div>
         </nav>
 
-        {/* // FAV and BAG */}
         <div className=" flex justify-between gap-5 items-center">
           {/* === FAV ICON */}
           {isLoaded && (
